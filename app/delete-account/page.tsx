@@ -11,7 +11,8 @@ export default function DeleteAccountPage() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
         const email = String(formData.get("email") || "").trim();
         const password = String(formData.get("password") || "");
         const statusEl = document.getElementById("status");
@@ -43,7 +44,7 @@ export default function DeleteAccountPage() {
                 );
             }
 
-            e.currentTarget.reset();
+            form.reset();
             statusEl.textContent =
                 payload.message ||
                 "Your account has been deleted successfully.";
