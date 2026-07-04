@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
     const features = [
@@ -14,18 +15,18 @@ export default function Home() {
                 "See exactly who owes who in real-time. No more spreadsheets required.",
             icon: "⚖️",
         },
-        {
-            title: "House Info",
-            description:
-                "Store Wi-Fi passwords, trash pickup days, and landlord info in one shared vault.",
-            icon: "🏠",
-        },
-        {
-            title: "Smart Notifications",
-            description:
-                "Get reminded when a bill is due or when a roommate settles up.",
-            icon: "🔔",
-        },
+        // {
+        //     title: "House Info",
+        //     description:
+        //         "Store Wi-Fi passwords, trash pickup days, and landlord info in one shared vault.",
+        //     icon: "🏠",
+        // },
+        // {
+        //     title: "Smart Notifications",
+        //     description:
+        //         "Get reminded when a bill is due or when a roommate settles up.",
+        //     icon: "🔔",
+        // },
     ];
 
     return (
@@ -53,22 +54,31 @@ export default function Home() {
                     {/* App Store Placeholder */}
                     <div className="mt-10">
                         <div className="inline-flex flex-col gap-3">
-                            <div className="flex items-center gap-4 opacity-50 grayscale">
-                                <div className="flex h-14 w-40 items-center justify-center rounded-xl bg-black text-white">
-                                    <span className="text-xs font-semibold">
-                                        Google Play Coming Soon
-                                    </span>
-                                </div>
-                            </div>
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.housetab&utm_source=na_Med"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Get HouseTab on Google Play"
+                                className="inline-flex transition hover:scale-[1.02]"
+                            >
+                                <Image
+                                    src="/google-play-badge.png"
+                                    alt="Get it on Google Play"
+                                    width={180}
+                                    height={70}
+                                    priority
+                                    className="h-auto w-[180px]"
+                                />
+                            </a>
                             <p className="text-xs font-medium text-slate-400 uppercase tracking-widest">
-                                Available shortly on Android
+                                Available NOW on Android
                             </p>
                         </div>
                     </div>
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-6 sm:grid-cols-2">
                     {features.map((feature) => (
                         <div
                             key={feature.title}

@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
-  output: "export",
+  allowedDevOrigins: ["https://housetab.com", "https://www.housetab.com", "http://localhost:3000"],
 };
 
 export default nextConfig;
